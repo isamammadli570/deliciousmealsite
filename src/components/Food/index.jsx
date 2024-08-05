@@ -87,7 +87,7 @@ function Food() {
       </h1>
 
       {/* filter row */}
-      <div className="flex flex-col lg:flex-row justify-between">
+      <div className="flex flex-col lg:flex-row justify-between ">
         {/* categories */}
         <div>
           <Options
@@ -101,7 +101,7 @@ function Food() {
           />
         </div>
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
+      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 cursor-pointer'>
         {meals.map((meal) => (
           <div
             key={meal.idMeal}
