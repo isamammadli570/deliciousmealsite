@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Options from "../Options";
+import { Link } from "react-router-dom";
 
 function Food() {
   const [item, setItem] = useState("");
@@ -101,25 +102,27 @@ function Food() {
           />
         </div>
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 '>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 ">
         {meals.map((meal) => (
           <div
             key={meal.idMeal}
-            className='border shadow-lg rounded-lg hover:scale-105 duration-300 cursor-pointer'
+            className="border shadow-lg rounded-lg hover:scale-105 duration-300 cursor-pointer"
           >
-            <img
-              src={meal.strMealThumb}
-              alt={meal.strMeal}
-              className='w-full h-[200px] object-cover rounded-t-lg'
-            />
-            <div className='flex justify-between px-2 py-4'>
-              <p className='font-bold'>{meal.strMeal}</p>
-              <p>
-                <span className='bg-orange-500 text-white p-1 rounded-full'>
-                  40$
-                </span>
-              </p>
-            </div>
+            <Link to={`/${meal.idMeal}?mealId=${meal.idMeal}`}>
+              <img
+                src={meal.strMealThumb}
+                alt={meal.strMeal}
+                className="w-full h-[200px] object-cover rounded-t-lg"
+              />
+              <div className="flex justify-between px-2 py-4">
+                <p className="font-bold">{meal.strMeal}</p>
+                <p>
+                  <span className="bg-orange-500 text-white p-1 rounded-full">
+                    40$
+                  </span>
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

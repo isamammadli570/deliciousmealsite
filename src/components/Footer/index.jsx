@@ -42,12 +42,12 @@ function Footer() {
           <div className=" py-8 px-4 ">
             <h1 className="sm:text-3xl text-xl sm:text-left text-justify mb-3 flex items-center ">
               {/* <img src={footerLogo} alt="Logo" className="max-w-[50px]" /> */}
-          Delici<span className="font-bold">ous</span>
+              Delici<span className="font-bold">ous</span>
             </h1>
             <p className="">
-              BookCentre is the perfect place to find the best books. Our
-              mission is to offer a wide selection and excellent service to book
-              lovers.
+              Delicious Meal Site is the perfect place to discover the most
+              delicious meals. Our mission is to offer a wide variety and
+              excellent service to food enthusiasts.
             </p>
             <br />
             <div className="flex items-center gap-3">
