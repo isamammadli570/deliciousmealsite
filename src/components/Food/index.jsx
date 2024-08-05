@@ -101,11 +101,11 @@ function Food() {
           />
         </div>
       </div>
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 cursor-pointer'>
+      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4 '>
         {meals.map((meal) => (
           <div
             key={meal.idMeal}
-            className='border shadow-lg rounded-lg hover:scale-105 duration-300'
+            className='border shadow-lg rounded-lg hover:scale-105 duration-300 cursor-pointer'
           >
             <img
               src={meal.strMealThumb}
