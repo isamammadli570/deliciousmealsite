@@ -1,17 +1,18 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppLayout from "./AppLayout";
-import Detail from "./pages/Detail";
+import Details from "./pages/Details";
+import Meals from "./pages/Meal";
+import Cocktails from "./pages/Cocktail";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<AppLayout />} />
-        <Route
-          path=":id"
-          element={<Detail />}
-        />
+        <Route path="meals" element = {<Meals />} />
+        <Route path="cocktails" element={<Cocktails/>} />
+        <Route path=":id" element={<Details />} />
       </Routes>
     </BrowserRouter>
   );

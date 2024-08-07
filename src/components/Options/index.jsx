@@ -3,10 +3,10 @@ import React from "react";
 function Options({
   selectedCategory,
   setSelectedCategory,
-  selectedArea,
-  setSelectedArea,
+  selectedAlcoholic,
+  setSelectedAlcoholic,
   categories,
-  areas,
+  alcoholic,
 }) {
   return (
     <div className="pt-1">
@@ -18,7 +18,10 @@ function Options({
       >
         {categories?.map((category) => {
           return (
-            <option key={category.idCategory} value={category.strCategory}>
+            <option
+              key={category.idCategory || category.strCategory}
+              value={category.strCategory}
+            >
               {category.strCategory}
             </option>
           );
@@ -28,13 +31,16 @@ function Options({
       <select
         className="p-[0.25rem] w-[80px] cursor-pointer ml-[0.3rem] 
         border border-black rounded-lg "
-        onChange={(e) => setSelectedArea(e.target.value)}
-        value={selectedArea}
+        onChange={(e) => setSelectedAlcoholic(e.target.value)}
+        value={selectedAlcoholic}
       >
-        {areas?.map((area) => {
+        {alcoholic?.map((alcoholic) => {
           return (
-            <option key={area.idArea} value={area.strArea}>
-              {area.strArea}
+            <option
+              key={alcoholic.idAlcoholic || alcoholic.strAlcoholic}
+              value={alcoholic.strAlcoholic}
+            >
+              {alcoholic.strAlcoholic}
             </option>
           );
         })}

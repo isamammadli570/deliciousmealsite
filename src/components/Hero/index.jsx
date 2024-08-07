@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "../../assets/heroimage.jpeg";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -14,6 +15,12 @@ function Hero() {
             {" "}
             <span className="text-orange-500">Foods</span> Devlivered
           </h1>
+          <Link to="/meals" className="w-[200px]">
+            <h2 className="px-4 text-2xl sm:text-3xl md:text-4xl 
+            lg:text-5xl font-bold text-gray-500 hover:text-orange-700">
+              Explore
+            </h2>
+          </Link>
         </div>
         <img
           className="w-full max-h-[500px] object-cover"

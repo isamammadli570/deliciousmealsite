@@ -1,14 +1,22 @@
 import React, { useState } from "react";
-import { FaBars, FaHeart, FaWallet, FaUserFriends } from "react-icons/fa";
+import {
+  FaBars,
+  FaHeart,
+  FaWallet,
+  FaUserFriends,
+  FaCocktail,
+} from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 import {
   FaCartShopping,
   FaCircleQuestion,
   FaCircleArrowDown,
 } from "react-icons/fa6";
+import { GiHotMeal } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { TbTruckDelivery } from "react-icons/tb";
 import { IoTicket } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
 
 const menu = [
   {
@@ -61,9 +69,11 @@ function Navbar() {
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <FaBars size={30} />
         </div>
-        <h1 className="text-2xl px-2 sm:text-3xl lg:text-4xl">
-           Delici<span className="font-bold">ous</span>
-        </h1>
+        <NavLink to="/">
+          <h1 className="text-2xl px-2 sm:text-3xl lg:text-4xl">
+            Delici<span className="font-bold">ous</span>
+          </h1>
+        </NavLink>
         <div className="hidden lg:flex items-center bg-gray-200 rounded-full p-1 ">
           <p className="bg-black text-white rounded-full p-2 ">Delivery</p>
           <p>Pickup</p>
@@ -81,8 +91,28 @@ function Navbar() {
           type="text"
         />
       </div>
+
+      <div>
+        <ul className="flex text-xl">
+          <li className="p-2 ">
+            <NavLink className="flex items-center " to="/meals">
+              <GiHotMeal />
+              Meals
+            </NavLink>
+          </li>
+          <li className="p-2 ">
+            <NavLink className="flex items-center" to="/cocktails">
+              <FaCocktail />
+              Cocktails
+            </NavLink>
+          </li>
+        </ul>
+      </div>
       {/* order hissesi */}
-      <button className="bg-black text-white p-2 rounded-full hidden md:flex items-center px-2">
+      <button
+        className="bg-black text-white p-2 rounded-full 
+      hidden md:flex items-center px-2"
+      >
         <FaCartShopping size={20} />
         <p className="px-1">Order</p>
       </button>
