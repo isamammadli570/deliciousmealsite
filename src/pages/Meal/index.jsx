@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
-import Options from "../../components/Options";
 import Category from "../../components/Category";
 import Footer from "../../components/Footer";
+import OptionsMeal from "../../components/OptionsMeal";
 
 function Meals() {
   const [item, setItem] = useState("");
@@ -92,7 +92,7 @@ function Meals() {
         {/* filter row */}
         <div className="flex flex-col lg:flex-row justify-between ">
           <div>
-            <Options
+            <OptionsMeal
               key={meals.Idmeal}
               selectedCategory={selectedCategory}
               selectedArea={selectedArea}

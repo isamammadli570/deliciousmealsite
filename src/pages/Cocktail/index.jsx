@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import Options from "../../components/Options";
 import { Link } from "react-router-dom";
 import Category from "../../components/Category";
 import Footer from "../../components/Footer";
+import OptionsCocktail from "../../components/OptionsCocktail";
 
 function Cocktails() {
   const [item, setItem] = useState("");
@@ -91,7 +91,7 @@ function Cocktails() {
         {/* filter row */}
         <div className="flex flex-col lg:flex-row justify-between ">
           <div>
-            <Options
+            <OptionsCocktail
               key={drinks.Idmeal}
               selectedCategory={selectedCategory}
               selectedAlcoholic={selectedAlcoholic}

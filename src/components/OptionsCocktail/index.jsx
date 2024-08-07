@@ -1,6 +1,6 @@
 import React from "react";
 
-function Options({
+function OptionsCocktail({
   selectedCategory,
   setSelectedCategory,
   selectedAlcoholic,
@@ -49,4 +49,4 @@ function Options({
   );
 }
 
-export default Options;
+export default OptionsCocktail;
