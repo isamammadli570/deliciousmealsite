@@ -49,7 +49,7 @@ function Food() {
               <img
                 src={meal.strMealThumb}
                 alt={meal.strMeal}
-                className="w-[400px] h-[400px] object-cover rounded-t-lg"
+                className="md:w-[400px] md:h-[400px] object-cover rounded-t-lg"
               />
               <div className="flex justify-between px-2 py-4">
                 <p className="font-bold">{meal.strMeal}</p>

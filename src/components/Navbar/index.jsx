@@ -92,8 +92,8 @@ function Navbar() {
         />
       </div>
 
-      <div>
-        <ul className="flex text-xl">
+      <div className="">
+        <ul className="flex md:text-xl text-sm">
           <li className="p-2 ">
             <NavLink className="flex items-center " to="/meals">
               <GiHotMeal />
