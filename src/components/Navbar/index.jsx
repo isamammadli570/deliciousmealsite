@@ -97,13 +97,11 @@ function Navbar() {
           <li className="p-2 ">
             <NavLink className="flex items-center " to="/meals">
               <GiHotMeal />
-              Meals
             </NavLink>
           </li>
           <li className="p-2 ">
             <NavLink className="flex items-center" to="/cocktails">
               <FaCocktail />
-              Cocktails
             </NavLink>
           </li>
         </ul>
