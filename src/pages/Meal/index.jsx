@@ -120,7 +120,7 @@ function Meals() {
                   <p className="font-bold">{meal.strMeal}</p>
                   <p>
                     <span className="bg-orange-500 text-white p-1 rounded-full">
-                      40$
+                      $$
                     </span>
                   </p>
                 </div>
@@ -130,8 +130,8 @@ function Meals() {
         </div>
       </div>
       <div>
-        <Category/>
-        <Footer/>
+        <Category />
+        <Footer />
       </div>
     </div>
   );

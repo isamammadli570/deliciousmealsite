@@ -119,7 +119,7 @@ function Cocktails() {
                   <p className="font-bold">{drink.strDrink}</p>
                   <p>
                     <span className="bg-orange-500 text-white p-1 rounded-full">
-                      40$
+                      $$
                     </span>
                   </p>
                 </div>

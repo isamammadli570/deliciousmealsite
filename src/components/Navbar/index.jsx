@@ -31,13 +31,13 @@ const menu = [
   },
   {
     id: "3",
-    icon: <FaWallet size={20} />,
-    name: "Wallet",
+    icon: <FaCocktail size={20} />,
+    name: "Cocktails",
   },
   {
     id: "4",
-    icon: <FaCircleQuestion size={20} />,
-    name: "Help",
+    icon: <GiHotMeal size={20} />,
+    name: "Meals",
   },
   {
     id: "5",
@@ -46,13 +46,13 @@ const menu = [
   },
   {
     id: "6",
-    icon: <FaCircleArrowDown size={20} />,
-    name: "Best One",
+    icon: <FaWallet size={20} />,
+    name: "Wallet",
   },
   {
     id: "7",
-    icon: <FaUserFriends size={20} />,
-    name: "Invite Friens",
+    icon: <FaCircleQuestion size={20} />,
+    name: "Help",
   },
 ];
 
@@ -118,7 +118,7 @@ function Navbar() {
       {/* mobile menu */}
       {/* overlay */}
       {nav ? (
-        <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0"></div>
+        <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0 "></div>
       ) : (
         ""
       )}
