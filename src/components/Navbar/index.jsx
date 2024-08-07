@@ -92,14 +92,14 @@ function Navbar() {
         />
       </div>
 
-      <div className="">
+      <div>
         <ul className="flex md:text-xl text-sm">
-          <li className="p-2 ">
+          <li className="p-2 hover:scale-125 duration-200">
             <NavLink className="flex items-center " to="/meals">
               <GiHotMeal />
             </NavLink>
           </li>
-          <li className="p-2 ">
+          <li className="p-2 hover:scale-125 duration-200">
             <NavLink className="flex items-center" to="/cocktails">
               <FaCocktail />
             </NavLink>
