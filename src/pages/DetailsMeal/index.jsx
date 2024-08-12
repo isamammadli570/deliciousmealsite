@@ -1,11 +1,9 @@
 import React from 'react'
-import Navbar from '../../components/Navbar';
 
 function DetailsMeal({details}) {
   return (
     <div>
       <div>
-        <Navbar />
         <div className="w-full max-w-7xl md:m-[100px] border shadow-2xl ">
           {details?.map((detail) => {
             return (

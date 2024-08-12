@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
-import Category from "../../components/Category";
-import Footer from "../../components/Footer";
 import OptionsCocktail from "../../components/OptionsCocktail";
 
 function Cocktails() {
@@ -79,7 +76,6 @@ function Cocktails() {
   }, []);
   return (
     <div>
-      <Navbar />
       <div className="max-w-[1640px] m-auto px-4 py-12">
         <h1
           className="text-orange-500 font-bold
@@ -127,10 +123,6 @@ function Cocktails() {
             </div>
           ))}
         </div>
-      </div>
-      <div>
-        <Category />
-        <Footer />
       </div>
     </div>
   );

@@ -1,34 +1,20 @@
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import {
+  getExampleMeal,
+  getStarterMeals,
+} from "../../services/mealApi/mealMain";
 
 function Food() {
-  const [item, setItem] = useState("");
-  const [meals, setMeals] = useState([]);
+  const { data: meal } = useQuery({
+    queryKey: ["meals"],
+    queryFn: () => getStarterMeals(),
+  });
 
-  const [exampleMeal, setExampleMeal] = useState([]);
-
-  //? meals use effect i
-  useEffect(function () {
-    async function FetchMeals() {
-      const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/filter.php?c=Starter`
-      );
-      const { meals } = await res.json();
-      setMeals(meals);
-    }
-    FetchMeals();
-  }, []);
-
-  useEffect(function () {
-    async function FetchMeals() {
-      const res = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/lookup.php?i=52771`
-      );
-      const { meals } = await res.json();
-      setExampleMeal(meals);
-    }
-    FetchMeals();
-  }, []);
+  const { data: exampleMeal } = useQuery({
+    queryKey: ["exampleMeals"],
+    queryFn: () => getExampleMeal(),
+  });
 
   return (
     <div className="max-w-[1640px] m-auto px-4 py-12">
@@ -40,7 +26,7 @@ function Food() {
       </h1>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4  ">
-        {meals?.map((meal) => (
+        {meal?.map((meal) => (
           <div
             key={meal.idMeal}
             className="border shadow-lg rounded-lg hover:scale-105 duration-300 cursor-pointer "
