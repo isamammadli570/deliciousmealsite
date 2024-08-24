@@ -1,63 +1,11 @@
-import React, { useState } from "react";
-import {
-  FaBars,
-  FaHeart,
-  FaWallet,
-  FaUserFriends,
-  FaCocktail,
-} from "react-icons/fa";
+import React, { useContext } from "react";
 import { CiSearch } from "react-icons/ci";
-import {
-  FaCartShopping,
-  FaCircleQuestion,
-  FaCircleArrowDown,
-} from "react-icons/fa6";
-import { GiHotMeal } from "react-icons/gi";
-import { IoMdClose } from "react-icons/io";
-import { TbTruckDelivery } from "react-icons/tb";
-import { IoTicket } from "react-icons/io5";
-import { NavLink } from "react-router-dom";
+import { FaBarsStaggered, FaCartShopping } from "react-icons/fa6";
+import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../../context/ContextProvider";
 
-const menu = [
-  {
-    id: "1",
-    icon: <TbTruckDelivery size={20} />,
-    name: "Orders",
-  },
-  {
-    id: "2",
-    icon: <FaHeart size={20} />,
-    name: "Favorites",
-  },
-  {
-    id: "3",
-    icon: <FaCocktail size={20} />,
-    name: "Cocktails",
-  },
-  {
-    id: "4",
-    icon: <GiHotMeal size={20} />,
-    name: "Meals",
-  },
-  {
-    id: "5",
-    icon: <IoTicket size={20} />,
-    name: "Promotions",
-  },
-  {
-    id: "6",
-    icon: <FaWallet size={20} />,
-    name: "Wallet",
-  },
-  {
-    id: "7",
-    icon: <FaCircleQuestion size={20} />,
-    name: "Help",
-  },
-];
-
-function Navbar() {
-  const [nav, setNav] = useState(false);
+function Navbar({ isOpen, setIsOpen }) {
+  const { cart } = useContext(CartContext);
 
   return (
     <div
@@ -66,8 +14,11 @@ function Navbar() {
     >
       {/* sol hisse */}
       <div className="flex items-center">
-        <div onClick={() => setNav(!nav)} className="cursor-pointer">
-          <FaBars size={30} />
+        <div
+          onClick={() => setIsOpen((open) => !open)}
+          className="cursor-pointer"
+        >
+          <FaBarsStaggered size={30} />
         </div>
         <NavLink to="/">
           <h1 className="text-2xl px-2 sm:text-3xl lg:text-4xl">
@@ -91,66 +42,11 @@ function Navbar() {
           type="text"
         />
       </div>
-
-      <div>
-        <ul className="flex md:text-xl text-sm">
-          <li className="p-2 hover:scale-125 duration-200">
-            <NavLink className="flex items-center " to="/meals">
-              <GiHotMeal />
-            </NavLink>
-          </li>
-          <li className="p-2 hover:scale-125 duration-200">
-            <NavLink className="flex items-center" to="/cocktails">
-              <FaCocktail />
-            </NavLink>
-          </li>
-        </ul>
-      </div>
       {/* order hissesi */}
-      <button
-        className="bg-black text-white p-2 rounded-full 
-      hidden md:flex items-center px-2"
-      >
-        <FaCartShopping size={20} />
-        <p className="px-1">Order</p>
-      </button>
-
-      {/* mobile menu */}
-      {/* overlay */}
-      {nav ? (
-        <div className="bg-black/80 fixed w-full h-screen z-10 top-0 left-0 "></div>
-      ) : (
-        ""
-      )}
-
-      <div
-        className={
-          nav
-            ? "fixed top-0 left-0 w-[300px] h-screen bg-white z-10 duration-300"
-            : "fixed top-0 left-[-100%] w-[300px] h-screen bg-white z-10 duration-300"
-        }
-      >
-        <IoMdClose
-          onClick={() => setNav(!nav)}
-          size={30}
-          className="absolute right-4 top-4 cursor-pointer"
-        />
-        <h2 className="text-2xl p-4">
-          Delici<span className="font-bold">ous</span>
-        </h2>
-        <nav>
-          <ul className="p-2">
-            {menu.map((menu) => {
-              return (
-                <li key={menu.id} className="flex items-center px-2 py-3">
-                  <p>{menu.icon}</p>
-                  <p className="px-2">{menu.name}</p>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </div>
+      <Link className="flex" to="/cart">
+        <FaCartShopping />
+        <sup className="mt-1 text-yellow-900">{`${cart.length}`}</sup>
+      </Link>
     </div>
   );
 }

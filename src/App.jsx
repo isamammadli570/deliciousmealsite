@@ -6,6 +6,7 @@ import Meals from "./pages/Meal";
 import Cocktails from "./pages/Cocktail";
 import Home from "./pages/Home";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Cart from "./pages/Cart";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,6 +24,7 @@ function App() {
             <Route path="meals" element={<Meals />} />
             <Route path="cocktails" element={<Cocktails />} />
             <Route path=":id" element={<Details />} />
+            <Route path="cart" element={<Cart />} />
           </Route>
         </Routes>
       </BrowserRouter>

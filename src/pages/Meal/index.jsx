@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import OptionsMeal from "../../components/OptionsMeal";
+import { FaCartArrowDown } from "react-icons/fa";
+import { CartContext } from "../../context/ContextProvider";
 
 function Meals() {
   const [item, setItem] = useState("");
@@ -75,6 +77,7 @@ function Meals() {
     }
     FetchDataSelectArea();
   }, []);
+  const { dispatch } = useContext(CartContext);
   return (
     <div>
       <div className="max-w-[1640px] m-auto px-4 py-12">
@@ -112,15 +115,16 @@ function Meals() {
                   alt={meal.strMeal}
                   className="w-full h-[200px] object-cover rounded-t-lg"
                 />
-                <div className="flex justify-between px-2 py-4">
-                  <p className="font-bold">{meal.strMeal}</p>
-                  <p>
-                    <span className="bg-orange-500 text-white p-1 rounded-full">
-                      $$
-                    </span>
-                  </p>
-                </div>
               </Link>
+              <div className="flex justify-between px-2 py-4">
+                <p className="font-bold">{meal.strMeal}</p>
+                <p
+                onClick={() => dispatch({ type: "Add", book: book })}
+                 className="flex items-center gap-1 bg-orange-500 text-white p-1 rounded-full">
+                  <span>Add</span>
+                  <FaCartArrowDown />
+                </p>
+              </div>
             </div>
           ))}
         </div>
