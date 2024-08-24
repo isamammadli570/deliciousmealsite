@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import OptionsCocktail from "../../components/OptionsCocktail";
+import { CartContext } from "../../context/ContextProvider";
 
 function Cocktails() {
   const [item, setItem] = useState("");
@@ -74,6 +75,8 @@ function Cocktails() {
     }
     FetchDataSelectArea();
   }, []);
+
+  const { dispatch } = useContext(CartContext);
   return (
     <div>
       <div className="max-w-[1640px] m-auto px-4 py-12">
@@ -113,7 +116,7 @@ function Cocktails() {
                 />
                 <div className="flex justify-between px-2 py-4">
                   <p className="font-bold">{drink.strDrink}</p>
-                  <p>
+                  <p onClick={() => dispatch({ type: "Add", food: drink })}>
                     <span className="bg-orange-500 text-white p-1 rounded-full">
                       $$
                     </span>

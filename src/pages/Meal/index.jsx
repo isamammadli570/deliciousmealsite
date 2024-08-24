@@ -7,6 +7,7 @@ import { CartContext } from "../../context/ContextProvider";
 function Meals() {
   const [item, setItem] = useState("");
   const [meals, setMeals] = useState([]);
+  
 
   const [selectedCategory, setSelectedCategory] = useState("Beef");
   const [selectedArea, setSelectedArea] = useState("American");
@@ -77,6 +78,7 @@ function Meals() {
     }
     FetchDataSelectArea();
   }, []);
+
   const { dispatch } = useContext(CartContext);
   return (
     <div>
@@ -119,7 +121,7 @@ function Meals() {
               <div className="flex justify-between px-2 py-4">
                 <p className="font-bold">{meal.strMeal}</p>
                 <p
-                onClick={() => dispatch({ type: "Add", book: book })}
+                onClick={() => dispatch({ type: "Add", food: meal })}
                  className="flex items-center gap-1 bg-orange-500 text-white p-1 rounded-full">
                   <span>Add</span>
                   <FaCartArrowDown />

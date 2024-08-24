@@ -12,8 +12,8 @@ function AppLayout() {
       <div
         className={
           isOpen
-            ? "fixed top-0 left-0 w-[300px] h-screen bg-stone-100  z-10 duration-300"
-            : "fixed top-0 left-[-100%] w-[300px] h-screen bg-stone-100  z-10 duration-300"
+            ? "fixed top-0 left-0 w-[300px] h-screen bg-stone-100 z-10 duration-300"
+            : "fixed top-0 left-[-100%] w-[300px] h-screen bg-stone-100 z-10 duration-300"
         }
       >
         {isOpen && <ResponsiveNav setIsOpen={setIsOpen} />}
