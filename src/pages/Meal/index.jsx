@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import OptionsMeal from "../../components/OptionsMeal";
-import { FaCartArrowDown } from "react-icons/fa";
 import { CartContext } from "../../context/ContextProvider";
+import { FaCartShopping } from "react-icons/fa6";
 
 function Meals() {
   const [item, setItem] = useState("");
@@ -120,12 +120,12 @@ function Meals() {
               </Link>
               <div className="flex justify-between px-2 py-4">
                 <p className="font-bold">{meal.strMeal}</p>
-                <p
+                <div
                 onClick={() => dispatch({ type: "Add", food: meal })}
                  className="flex items-center gap-1 bg-orange-500 text-white p-1 rounded-full">
                   <span>Add</span>
-                  <FaCartArrowDown />
-                </p>
+                  <FaCartShopping size={15} />
+                </div>
               </div>
             </div>
           ))}

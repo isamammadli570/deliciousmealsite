@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import OptionsCocktail from "../../components/OptionsCocktail";
 import { CartContext } from "../../context/ContextProvider";
+import { FaCartShopping } from "react-icons/fa6";
 
 function Cocktails() {
   const [item, setItem] = useState("");
@@ -116,11 +117,14 @@ function Cocktails() {
                 />
                 <div className="flex justify-between px-2 py-4">
                   <p className="font-bold">{drink.strDrink}</p>
-                  <p onClick={() => dispatch({ type: "Add", food: drink })}>
-                    <span className="bg-orange-500 text-white p-1 rounded-full">
-                      $$
-                    </span>
-                  </p>
+                  
+                  <div
+                    onClick={() => dispatch({ type: "Add", food: drink })}
+                    className="flex items-center gap-1 bg-orange-500 text-white p-1 rounded-full"
+                  >
+                    <span>Add</span>
+                    <FaCartShopping size={15} />
+                  </div>
                 </div>
               </Link>
             </div>
