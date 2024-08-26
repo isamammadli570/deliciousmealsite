@@ -17,11 +17,11 @@ const FooterLinks = [
     link: "/#",
   },
   {
-    title: "Favourites",
+    title: "Cocktails",
     link: "/#",
   },
   {
-    title: "Wallet",
+    title: "Meals",
     link: "/#",
   },
   {
@@ -35,13 +35,12 @@ const FooterLinks = [
 ];
 function Footer() {
   return (
-    <div className="bg-gray-100 px-10 ">
+    <footer className="bg-gray-100 px-10 ">
       <section className="container">
         <div className=" grid md:grid-cols-3 py-5">
           {/* detail hisse */}
           <div className=" py-8 px-4 ">
             <h1 className="sm:text-3xl text-xl sm:text-left text-justify mb-3 flex items-center ">
-              {/* <img src={footerLogo} alt="Logo" className="max-w-[50px]" /> */}
               Delici<span className="font-bold">ous</span>
             </h1>
             <p className="">
@@ -135,7 +134,7 @@ function Footer() {
           </div>
         </div>
       </section>
-    </div>
+    </footer>
   );
 }
 
