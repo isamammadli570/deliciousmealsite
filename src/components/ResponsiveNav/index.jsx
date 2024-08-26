@@ -7,28 +7,23 @@ import { NavLink } from "react-router-dom";
 const menu = [
   {
     id: "1",
-    icon: <TbTruckDelivery size={20} />,
-    name: "Orders",
-    link: "/cart"
-  },
-  {
-    id: "2",
-    icon: <FaHeart size={20} />,
-    name: "Favorites",
-    link: "/favorites"
-  },
-  {
-    id: "3",
     icon: <FaCocktail size={20} />,
     name: "Cocktails",
     link: "/cocktails",
   },
   {
-    id: "4",
+    id: "2",
     icon: <GiHotMeal size={20} />,
     name: "Meals",
     link: "/meals",
   },
+  {
+    id: "3",
+    icon: <TbTruckDelivery size={20} />,
+    name: "Orders",
+    link: "/cart",
+  },
+  
 ];
 
 function ResponsiveNav({ isOpen, setIsOpen }) {
@@ -43,12 +38,12 @@ function ResponsiveNav({ isOpen, setIsOpen }) {
         Delici<span className="font-bold">ous</span>
       </h2>
       <nav className="p-6">
-        <ul className="p-2">
+        <ul className="p-4">
           {menu.map((menu) => {
             return (
               <li
                 key={menu.id}
-                className="flex items-center px-2 py-6  text-xl"
+                className="flex items-center px-2 py-8  text-xl"
               >
                 <p>{menu.icon}</p>
                 <NavLink to={menu.link} className="px-2">
