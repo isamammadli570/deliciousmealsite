@@ -18,7 +18,7 @@ function Cart() {
         </div>
 
         <div className="p-10 md:relative bg-zinc-200">
-          <h1 className="text-3xl ">Total: {cart.length} books</h1>
+          <h1 className="text-3xl ">Total: {cart.length} items</h1>
           <button
             className="md:absolute border p-1 rounded-md
           bg-blue-400 hover:bg-blue-500 text-white 
