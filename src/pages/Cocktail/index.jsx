@@ -115,18 +115,18 @@ function Cocktails() {
                   alt={drink.strDrink}
                   className="w-full h-[200px] object-cover rounded-t-lg"
                 />
-                <div className="flex justify-between px-2 py-4">
-                  <p className="font-bold">{drink.strDrink}</p>
-                  
-                  <div
-                    onClick={() => dispatch({ type: "Add", food: drink })}
-                    className="flex items-center gap-1 bg-orange-500 text-white p-1 rounded-full"
-                  >
-                    <span>Add</span>
-                    <FaCartShopping size={15} />
-                  </div>
-                </div>
               </Link>
+              <div className="flex justify-between px-2 py-4">
+                <p className="font-bold">{drink.strDrink}</p>
+
+                <div
+                  onClick={() => dispatch({ type: "Add", food: drink })}
+                  className="flex items-center gap-1 bg-orange-500 text-white p-1 rounded-full"
+                >
+                  <span>Add</span>
+                  <FaCartShopping size={15} />
+                </div>
+              </div>
             </div>
           ))}
         </div>
